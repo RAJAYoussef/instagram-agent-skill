@@ -60,6 +60,7 @@ ASKS = [
     (re.compile(r"(?i)\blien (?:en|dans (?:ma|la)) bio\b"), "link in bio"),
     (re.compile(r"(?i)\b(?:swipe|fais d[ée]filer|glisse)\b"), "swipe or tap"),
     (re.compile(r"(?i)\bdis-moi\b|\bdites-moi\b|\btu ferais quoi\b|\blaquelle\b|\blequel\b"), "answer a question"),
+    (re.compile(r"(?i)\b(?:dis|dites|réponds|répondez|écris|écrivez)-(?:le|la|moi|nous)? ?en comm?entaires?\b|\ben commentaires?\b"), "answer in the comments"),
 ]
 
 FILLER_TAGS = {"#viral", "#fyp", "#explore", "#explorepage", "#foryou", "#foryoupage",
