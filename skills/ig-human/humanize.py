@@ -45,6 +45,33 @@ def load_lexicon(path=LEX):
         return json.load(fh)
 
 
+FR_HINTS = {"le", "la", "les", "des", "est", "et", "une", "du", "que", "qui",
+            "pas", "pour", "dans", "avec", "tu", "vous", "je", "c'est", "ce",
+            "mais", "sur", "au", "aux", "ça", "mon", "ton", "nous", "on"}
+EN_HINTS = {"the", "and", "is", "are", "you", "your", "to", "of", "it",
+            "that", "this", "for", "with", "my", "we", "was", "on", "in"}
+
+
+def detect_lang(text):
+    """'fr' or 'en', from function words. Good enough to pick a lexicon."""
+    toks = re.findall(r"[a-zà-ÿœ']+", text.lower())
+    fr = sum(t in FR_HINTS for t in toks)
+    en = sum(t in EN_HINTS for t in toks)
+    return "fr" if fr > en else "en"
+
+
+def for_language(lex, text):
+    """Keep only the lexicon entries for the text's language, so a French
+    caption never gets an English replacement and the other way round."""
+    lang = detect_lang(text)
+    keep = lambda e: e.get("lang", "en") == lang
+    out = dict(lex)
+    out["lang"] = lang
+    for k in ("words", "phrases", "structures"):
+        out[k] = [e for e in lex.get(k, []) if keep(e)]
+    return out
+
+
 def _cp(spec):
     """'U+200B' -> '\\u200b';  'U+E0000-U+E007F' -> (start, end)."""
     if "-" in spec:
@@ -148,7 +175,8 @@ def pass_lexical(text, lex):
     text = re.sub(r"(?m)^[ \t]*(?:[,.;:]+[ \t]*)+", "", text)
     text = re.sub(r"(?m)^[ \t](?=\S)", "", text)       # one space left by a deletion.
                                                       # Deeper indents are deliberate.
-    text = re.sub(r"\s+([,.;:!?])", r"\1", text)
+    # French puts a space before ; : ! ? and that space is correct, keep it.
+    text = re.sub(r"\s+([,.])" if lex.get("lang") == "fr" else r"\s+([,.;:!?])", r"\1", text)
     text = re.sub(r",\s*([,.;:!?])", r"\1", text)      # an em dash became a comma,
                                                       # then the clause after it went
     text = text.replace("...", "\x00ELL\x00")          # protect real ellipses
@@ -204,6 +232,7 @@ def restore_capitals(original, text):
 
 
 def humanize(text, lex):
+    lex = for_language(lex, text)
     raw_for_case = text
     text, urls = protect_urls(text)
     text, inv = pass_invisible(text, lex)

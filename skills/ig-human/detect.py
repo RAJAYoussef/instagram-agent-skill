@@ -33,11 +33,16 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 LEX = os.path.join(HERE, "slop.json")
 
 SENT_RE = re.compile(r"[^.!?\n]+[.!?]*")
-WORD_RE = re.compile(r"[A-Za-z']+")
-CONTRACTIONS = re.compile(r"\b\w+'(?:s|t|re|ve|ll|d|m)\b", re.IGNORECASE)
-PRONOUNS = re.compile(r"\b(i|me|my|mine|we|us|our|you|your)\b", re.IGNORECASE)
-NUMBERS = re.compile(r"\b\d[\d,.]*%?\b|\$\d")
-PROPER = re.compile(r"(?<![.!?]\s)(?<!^)\b[A-Z][a-z]{2,}\b", re.MULTILINE)
+WORD_RE = re.compile(r"[A-Za-zÀ-ÖØ-öø-ÿŒœ'’]+")
+CONTRACTIONS = re.compile(r"\b\w+'(?:s|t|re|ve|ll|d|m)\b"
+                          # French spoken markers: j'/t'/c' elisions and oral forms
+                          r"|\b(?:j|t|c)['’]\w|\by['’]a\b|\bchuis\b|\bouais\b|\bbah\b|\bgenre\b",
+                          re.IGNORECASE)
+PRONOUNS = re.compile(r"\b(i|me|my|mine|we|us|our|you|your"
+                      r"|je|moi|mon|ma|mes|nous|notre|nos|on|tu|toi|ton|ta|tes|vous|votre|vos)\b"
+                      r"|\b[jt]['’]", re.IGNORECASE)
+NUMBERS = re.compile(r"\b\d[\d,.]*\s?%?|\$\d|\d\s?€")
+PROPER = re.compile(r"(?<![.!?]\s)(?<!^)\b[A-ZÀ-ÖØ-Þ][a-zß-öø-ÿ]{2,}\b", re.MULTILINE)
 
 
 def clamp(n):
@@ -154,7 +159,35 @@ def check_voice(text, lex):
 CHECKS = ["BURSTINESS", "SPECIFICITY", "SLOP DENSITY", "FINGERPRINT", "VOICE"]
 
 
+
+FR_HINTS = {"le", "la", "les", "des", "est", "et", "une", "du", "que", "qui",
+            "pas", "pour", "dans", "avec", "tu", "vous", "je", "c'est", "ce",
+            "mais", "sur", "au", "aux", "ça", "mon", "ton", "nous", "on"}
+EN_HINTS = {"the", "and", "is", "are", "you", "your", "to", "of", "it",
+            "that", "this", "for", "with", "my", "we", "was", "on", "in"}
+
+
+def detect_lang(text):
+    """'fr' or 'en', from function words. Good enough to pick a lexicon."""
+    toks = re.findall(r"[a-zà-ÿœ']+", text.lower())
+    fr = sum(t in FR_HINTS for t in toks)
+    en = sum(t in EN_HINTS for t in toks)
+    return "fr" if fr > en else "en"
+
+
+def for_language(lex, text):
+    """Keep only the lexicon entries for the text's language, so a French
+    caption never gets an English replacement and the other way round."""
+    lang = detect_lang(text)
+    keep = lambda e: e.get("lang", "en") == lang
+    out = dict(lex)
+    out["lang"] = lang
+    for k in ("words", "phrases", "structures"):
+        out[k] = [e for e in lex.get(k, []) if keep(e)]
+    return out
+
 def run(text, lex):
+    lex = for_language(lex, text)
     results = {}
     results["BURSTINESS"] = check_burstiness(text)
     results["SPECIFICITY"] = check_specificity(text)

@@ -1,67 +1,72 @@
 # voice.md
 
-Copy this to `~/.claude/instagram/voice.md` and fill it in. Every skill in the
-pack reads it. Ten minutes here is the difference between scripts you shoot and
-scripts you rewrite.
+Copie ce fichier dans `~/.claude/instagram/voice.md` et remplis-le. Tous les
+skills du pack le lisent. Dix minutes ici font la différence entre des scripts
+que tu tournes et des scripts que tu réécris.
 
-If you would rather not fill it in by hand, send Claude three of your own reels
-or captions and say "write my voice.md from these". That works better than
-guessing at the answers.
+Si tu préfères ne pas le remplir à la main, envoie à Claude trois de tes propres
+reels ou légendes et dis « écris mon voice.md à partir de ça ». Ça marche mieux
+que de deviner les réponses.
 
-This file matters more on Instagram than anywhere else, because you have to say
-the words out loud. A line you would never say is not a draft, it is a retake.
+Ce fichier compte plus sur Instagram qu'ailleurs, parce que les mots, il faut
+les dire à voix haute. Une phrase que tu ne dirais jamais n'est pas un
+brouillon, c'est une prise à refaire.
 
 ---
 
-## Who I am
+## Qui je suis
 
-- **Name:**
-- **Handle:**
-- **What I do, in one sentence:**
-- **Who I am talking to:** (be specific: "photographers charging under $2,000",
-  not "creatives")
-- **What I sell:**
+- **Nom :**
+- **Pseudo :**
+- **Ce que je fais, en une phrase :**
+- **À qui je parle :** (sois précis : « parents d'élèves de 6e qui galèrent
+  avec les devoirs de maths », pas « les familles »)
+- **Ce que je vends :**
 
-## What I sound like
+## Comment je parle
 
-- **Three of my own reels or captions that sound most like me:** (paste them)
-- **On camera I am:** (fast and loud / dry / calm / funny / deadpan)
-- **Words I actually use:**
-- **Words I would never say out loud:**
-- **Do I swear:** (yes / mild / no)
-- **Emoji in captions:** (never / one, rarely / freely)
-- **Face on camera:** (always / sometimes / faceless)
-- **Voiceover or to-camera:**
-- **Pace:** (words per minute, if you have timed yourself reading a script.
-  `beats.py --wpm` uses this. Most people are between 150 and 200.)
+- **Trois de mes reels ou légendes qui me ressemblent le plus :** (colle-les)
+- **Face caméra, je suis :** (rapide et fort / pince-sans-rire / calme / drôle
+  / impassible)
+- **Tu ou vous :** (je tutoie mon public / je vouvoie)
+- **Les mots que j'utilise vraiment :**
+- **Les mots que je ne dirais jamais à voix haute :**
+- **Est-ce que je jure :** (oui / un peu / non)
+- **Émojis en légende :** (jamais / un, rarement / librement)
+- **Visage à l'écran :** (toujours / parfois / jamais)
+- **Voix off ou face caméra :**
+- **Débit :** (mots par minute, si tu t'es chronométré en lisant un script.
+  `beats.py --wpm` l'utilise. La plupart des gens sont entre 150 et 200.)
 
-## My positions
+## Mes positions
 
-Three to five things I believe that some of my audience does not. These are
-where the good reels come from.
+Trois à cinq choses que je crois et qu'une partie de mon public ne croit pas.
+C'est de là que viennent les bons reels.
 
 1.
 2.
 3.
 
-## Off limits
+## Hors limites
 
-- **Topics I do not post about:**
-- **Clients, numbers or names I cannot say publicly:**
-- **Claims I am not allowed to make:** (regulated industry, employer policy, NDA)
+- **Sujets dont je ne parle pas :**
+- **Clients, chiffres ou noms que je ne peux pas citer publiquement :**
+- **Affirmations que je n'ai pas le droit de faire :** (secteur réglementé,
+  règles de l'employeur, confidentialité, mineurs)
 
-## Proof I can use
+## Les preuves que je peux utiliser
 
-Real numbers, outcomes and stories I am happy to put my name on. The skills will
-never invent one, so if this section is empty, every draft comes back with
-`{{your number}}` in it.
+Des chiffres, résultats et histoires réels que je suis prêt à signer de mon nom.
+Les skills n'en inventeront jamais, donc si cette section est vide, chaque
+brouillon reviendra avec `{{ton chiffre}}` dedans.
 
 -
 -
 -
 
-## The ask
+## La demande
 
-- **My keyword CTA, if I use one:** (one word, sayable, no spaces)
-- **What the keyword sends them:**
-- **Where my link goes:**
+- **Mon mot-clé d'appel à l'action, si j'en ai un :** (un mot, facile à dire,
+  sans espace)
+- **Ce que le mot-clé leur envoie :**
+- **Où va mon lien :**

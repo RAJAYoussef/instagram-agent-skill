@@ -1,97 +1,101 @@
 ---
 name: ig-story
 description: >-
-  Write the day's Instagram Stories - the frame-by-frame sequence, which
-  stickers to use where, and the one that moves people into the DMs. Use when
-  the user says "stories", "what do I post on my story", "story sequence",
-  "poll idea", "I have nothing to story about", or wants to sell something
-  without making a post about it.
+  Écrire les Stories Instagram du jour : la séquence image par image, quels
+  stickers utiliser où, et celui qui amène les gens en DM. À utiliser quand
+  l'utilisateur dit « stories », « qu'est-ce que je mets en story »,
+  « séquence de stories », « idée de sondage », « je n'ai rien à mettre en
+  story », ou veut vendre quelque chose sans faire de publication dessus.
 ---
 
 # ig-story
 
-Stories are not a smaller feed. The feed is how strangers find you. Stories are
-how the people who already follow you decide whether you are a person worth
-buying from, and they are the only surface on Instagram where a tap turns into
-a conversation in one move.
+Les Stories ne sont pas un petit fil d'actualité. Le fil, c'est comme ça que
+des inconnus te trouvent. Les Stories, c'est comme ça que ceux qui te suivent
+déjà décident si tu es quelqu'un à qui acheter, et c'est le seul endroit
+d'Instagram où un tap devient une conversation en un geste.
 
-Nobody outside your followers sees these, so the job is completely different:
-depth, not reach.
+Personne en dehors de tes abonnés ne les voit, donc le travail est
+complètement différent : de la profondeur, pas de la portée.
 
-## The daily shape
+## La forme quotidienne
 
-Three to seven frames a day. Beyond about seven, the tap-forward rate climbs
-and the last frames play to nobody, which is exactly where people put the ask.
+Trois à sept images par jour. Au-delà d'environ sept, le taux de passage à la
+suivante grimpe et les dernières images se jouent devant personne, et c'est
+justement là qu'on met la demande.
 
 ```
-1       THE OPEN     something happening today, with a face or a hand in it.
-2-3     THE MIDDLE   the actual content: the process, the result, the mistake.
-4       THE ASK      one sticker. Poll, question box, quiz or link.
-5       THE CLOSE    the answer, the outcome, or tomorrow's setup.
+1       L'OUVERTURE  quelque chose qui se passe aujourd'hui, avec un visage ou
+                     une main dedans.
+2-3     LE MILIEU    le vrai contenu : le processus, le résultat, l'erreur.
+4       LA DEMANDE   un sticker. Sondage, boîte à questions, quiz ou lien.
+5       LA FIN       la réponse, le résultat, ou l'annonce de demain.
 ```
 
-Put the ask at frame 4, not frame 7. Completion drops with every tap and the
-ask should be seen by the people who are still there.
+Mets la demande à l'image 4, pas à l'image 7. Les spectateurs diminuent à
+chaque tap, et la demande doit être vue par ceux qui sont encore là.
 
-## The stickers, and what each is actually for
+## Les stickers, et à quoi chacun sert vraiment
 
-| sticker | job | use when |
+| sticker | rôle | quand |
 | --- | --- | --- |
-| **Poll** | the cheapest tap there is | you want volume of response, not information |
-| **Question box** | harvesting the exact words people use | you need content ideas or objections, verbatim |
-| **Quiz** | teaching by letting them be wrong | there is a common misconception in the niche |
-| **Slider** | vibe check | nothing important. Fun, low value |
-| **Link** | the only clickable surface besides the bio | there is somewhere real to go |
-| **Countdown** | a deadline people can subscribe to | a launch, a live, a close date |
-| **Add yours** | reach beyond your followers, occasionally | the prompt is one anyone in the niche can answer |
+| **Sondage** | le tap le moins cher qui existe | tu veux du volume de réponses, pas de l'information |
+| **Boîte à questions** | récolter les mots exacts du public | tu as besoin d'idées de contenu ou d'objections, mot pour mot |
+| **Quiz** | apprendre en laissant les gens se tromper | il y a une idée reçue courante dans la niche |
+| **Curseur** | prendre la température | rien d'important. Fun, peu de valeur |
+| **Lien** | la seule zone cliquable avec la bio | il y a un vrai endroit où aller |
+| **Compte à rebours** | une échéance à laquelle on peut s'abonner | un lancement, un live, une date de fin |
+| **Ajoute la tienne** | de la portée au-delà des abonnés, de temps en temps | la consigne est une à laquelle tout le monde dans la niche peut répondre |
 
-The question box is the most undervalued one in the list. Every answer is a
-caption, a Reel hook or a DM opener written in the audience's own words. Feed
-them to `/ig-reel` as formula #16.
+La boîte à questions est la plus sous-estimée de la liste. Chaque réponse est
+une légende, une accroche de Reel ou un premier message de DM écrit avec les
+mots du public. Passe-les à `/ig-reel` comme formule #16.
 
-## Rules
+## Règles
 
-- **A face or a hand in the first frame.** Text on a coloured background gets
-  tapped through, and the first frame decides whether the rest get watched.
-- **One idea per frame.** Reading a paragraph on a story is not a thing anyone
-  does.
-- **Keep text inside the middle.** On 1080x1920, nothing above y=250 or below
-  y=1600. The profile row sits on top and the reply bar sits underneath.
-- **Talk to one person.** "You" singular. Stories are the closest thing to a
-  DM that is not one.
-- **Do not repost your own feed post to stories with no comment.** It is the
-  single most ignored frame on the platform. If you are pointing at a post, say
-  what happened in the comments and why it is worth going back for.
-- **Sell on stories, not in posts.** Three frames of context, one frame of
-  offer, one frame of proof. That sequence sells more than a feed post about
-  the same thing and costs you no reach.
+- **Un visage ou une main dans la première image.** Du texte sur fond de
+  couleur se fait zapper, et la première image décide si le reste est regardé.
+- **Une idée par image.** Personne ne lit un paragraphe en story.
+- **Garde le texte au centre.** Sur 1080x1920, rien au-dessus de y=250 ni en
+  dessous de y=1600. La ligne du profil est en haut et la barre de réponse en
+  bas.
+- **Parle à une seule personne.** « Tu », au singulier. Les Stories sont ce
+  qu'il y a de plus proche d'un DM sans en être un.
+- **Ne repartage pas ta propre publication en story sans commentaire.** C'est
+  l'image la plus ignorée de la plateforme. Si tu pointes vers une publication,
+  dis ce qui s'est passé en commentaires et pourquoi ça vaut le détour.
+- **Vends en story, pas dans les publications.** Trois images de contexte, une
+  image d'offre, une image de preuve. Cette séquence vend plus qu'une
+  publication sur le même sujet et ne te coûte aucune portée.
 
-## The DM funnel, done honestly
+## Le tunnel vers les DM, fait honnêtement
 
-The sequence that works: a story that names a problem, a question box or a poll
-that lets people say "that's me", and then a reply to each person who answered.
-The conversation starts because they spoke first.
+La séquence qui marche : une story qui nomme un problème, une boîte à questions
+ou un sondage qui permet de dire « c'est moi », puis une réponse à chaque
+personne qui a répondu. La conversation démarre parce que c'est eux qui ont
+parlé en premier.
 
-Automated keyword DM replies are a real, supported feature for professional
-accounts, through Instagram's own tools and approved partners. Bulk DMing
-people who did not interact is not, and it is what gets accounts restricted.
-The rule is simple: **they act first, then you reply.**
+Les réponses automatiques par mot-clé en DM sont une vraie fonctionnalité
+prise en charge pour les comptes professionnels, via les outils d'Instagram et
+les partenaires agréés. Envoyer des DM en masse à des gens qui n'ont pas
+interagi, non, et c'est ce qui fait restreindre les comptes. La règle est
+simple : **ils agissent d'abord, ensuite tu réponds.**
 
-## Output
+## Sortie
 
-The frames in order, each with what is on screen, what is said, and which
-sticker, plus what to do with the answers:
+Les images dans l'ordre, chacune avec ce qui est à l'écran, ce qui est dit et
+quel sticker, plus quoi faire des réponses :
 
 ```
-STORIES  ·  Tuesday  ·  5 frames
+STORIES  ·  mardi  ·  5 images
 
-1  [selfie, walking]      "Third refund request this year. Same reason."
-2  [screen recording]     the clause, highlighted
-3  [talking]              "Approval is a feeling. Delivery is a date."
-4  [poll]                 "Have you been burned by a late approval?"  Yes / Not yet
-5  [text on photo]        "Reply and I will send you the clause."
+1  [selfie, en marchant]   « Troisième élève cette semaine bloqué sur la même chose. »
+2  [capture d'écran]       l'exercice, surligné
+3  [face caméra]           « Ce n'est pas un problème de calcul. C'est un problème d'image. »
+4  [sondage]               « Les fractions, pour toi c'est… »  Facile / L'horreur
+5  [texte sur photo]       « Réponds et je t'envoie l'exercice qui débloque. »
 
-After: everyone who votes Yes gets a reply. That is the whole funnel.
+Après : chaque personne qui vote « L'horreur » reçoit une réponse. C'est tout le tunnel.
 ```
 
-Nothing is posted. The user posts it.
+Rien n'est publié. L'utilisateur publie.

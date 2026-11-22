@@ -36,14 +36,18 @@ import re
 import statistics
 import sys
 
-WORD_RE = re.compile(r"[A-Za-z0-9$%'’-]+")
+WORD_RE = re.compile(r"[A-Za-zÀ-ÖØ-öø-ÿŒœ0-9$€%'’-]+")
+# French elisions: "j'ai" is looked up as "ai" as well, "c'est" as "est".
+ELISION_RE = re.compile(r"^(?:j|l|d|n|m|t|s|c|qu|jusqu|lorsqu|puisqu)['’](.+)$", re.IGNORECASE)
 NUMBER_RE = re.compile(
     r"\$\s?\d[\d,]*(?:\.\d+)?"                       # money, whole
+    r"|\b\d[\d,]*(?:\.\d+)?\s?(?:€|euros?\b)"           # money, French style
+    r"|\b\d[\d,]*(?:\.\d+)?\s?(?:h\b|heures?\b|jours?\b|semaines?\b|mois\b|ans\b|années?\b|secondes?\b)"
     r"|\b\d[\d,]*(?:\.\d+)?\s?"                      # a figure, with or
     r"(?:%|k\b|x\b|hrs?\b|hours?\b|mins?\b|minutes?\b"  # without a unit
     r"|days?\b|weeks?\b|months?\b|years?\b)?",
     re.IGNORECASE)
-PROPER_RE = re.compile(r"(?<!^)\b[A-Z][a-z]{2,}\b")
+PROPER_RE = re.compile(r"(?<!^)\b[A-ZÀ-ÖØ-Þ][a-zß-öø-ÿ]{2,}\b")
 HASHTAG_RE = re.compile(r"(?:^|\s)#\w+")
 EMOJI_RE = re.compile(r"[\U0001F300-\U0001FAFF☀-➿]")
 
@@ -56,10 +60,18 @@ SPOKEN_NUMBERS = {
     "ten", "eleven", "twelve", "fifteen", "twenty", "thirty", "forty", "fifty",
     "sixty", "seventy", "eighty", "ninety", "hundred", "thousand", "million",
     "billion", "dozen", "half", "twice", "triple",
+    # French
+    "zéro", "deux", "trois", "quatre", "cinq", "sept", "huit", "neuf",
+    "dix", "onze", "douze", "quinze", "vingt", "trente", "quarante",
+    "cinquante", "soixante", "cent", "cents", "mille", "million", "millions",
+    "milliard", "milliards", "douzaine", "moitié", "double", "triple",
 }
 MONEY_WORDS = {
     "dollars", "dollar", "bucks", "grand", "percent", "cents",
     "millionaire", "billionaire", "revenue", "profit", "salary", "rent",
+    # French
+    "euros", "euro", "balles", "dirhams", "pourcent", "centimes", "salaire",
+    "loyer", "bénéfice", "millionnaire", "note", "notes", "moyenne",
 }
 
 # Words that put something on the line. A hook with none of these is a
@@ -76,6 +88,18 @@ STAKES = {
     "before", "until", "instead", "but", "except", "unless", "problem",
     "risk", "danger", "warning", "regret", "wish", "should", "shouldn't",
     "still", "already", "only", "without", "versus", "vs", "actually",
+    # French
+    "arrête", "arrêtez", "jamais", "faux", "fausse", "erreur", "erreurs",
+    "perdu", "perdue", "perdre", "coûté", "coûte", "coûter", "raté", "ratée",
+    "échec", "échoué", "personne", "rien", "ne", "pas", "plus", "aucun",
+    "aucune", "viré", "supprimé", "remplacé", "remplace", "gratuit",
+    "gratuite", "payé", "interdit", "pire", "déteste", "détesté", "gâché",
+    "arnaque", "mensonge", "menti", "vérité", "secret", "caché", "cachée",
+    "avant", "jusqu'à", "jusqu", "au lieu", "mais", "sauf", "problème",
+    "risque", "danger", "attention", "regret", "regrette", "aurais",
+    "devrais", "encore", "déjà", "seulement", "seul", "seule", "sans",
+    "contre", "vraiment", "bloqué", "bloquée", "nul", "nulle", "zéro",
+    "flop", "galère", "galérer", "piège", "oublie", "personne",
 }
 
 # Openers that spend the first second saying nothing.
@@ -86,6 +110,11 @@ WEAK_OPENERS = [
     "have you", "did you", "do you", "are you", "in this", "in today",
     "the thing", "a lot", "there is", "there are", "this is", "it is",
     "as a", "when it", "if you've", "you know",
+    # French
+    "alors", "bon", "salut", "coucou", "bonjour", "hello", "donc", "en fait",
+    "franchement", "écoute", "écoutez", "voilà", "bref", "aujourd'hui",
+    "aujourd", "je voulais", "je vais", "est-ce que", "vous savez",
+    "tu sais", "il y", "c'est", "dans cette", "comme vous", "comme tu",
 ]
 
 # Imperatives that earn the front position.
@@ -93,6 +122,14 @@ IMPERATIVES = {
     "stop", "steal", "copy", "delete", "try", "watch", "read", "save",
     "use", "build", "make", "write", "send", "take", "start", "quit",
     "never", "always", "don't", "dont", "do", "put", "run", "check",
+    # French
+    "arrête", "arrêtez", "vole", "volez", "copie", "copiez", "supprime",
+    "essaie", "essaye", "essayez", "regarde", "regardez", "lis", "lisez",
+    "enregistre", "enregistrez", "utilise", "utilisez", "fais", "faites",
+    "écris", "écrivez", "envoie", "prends", "prenez", "commence",
+    "commencez", "ne", "n", "jamais", "toujours", "teste", "testez",
+    "vérifie", "oublie", "oubliez", "garde", "note", "apprends", "dessine",
+    "coupe", "imagine", "imaginez",
 }
 
 DEALBREAKERS = [
@@ -101,6 +138,12 @@ DEALBREAKERS = [
     (re.compile(r"(?i)\b(?:in (?:this|today'?s) (?:video|reel)|i'?m going to show you|i'?ll show you how)\b"),
      "Video preamble. Delete it and open on the payoff."),
     (re.compile(r"(?i)^\s*(?:hey |hi |what'?s up |welcome )"),
+     "Greeting. Nobody came to the feed to be greeted."),
+    (re.compile(r"(?i)^\s*(?:arr[êe]te[sz]? de scroll|ne scrolle? pas|stop scroll)"),
+     "Opens with \"arrête de scroller\". Asking for attention proves you have not earned it."),
+    (re.compile(r"(?i)\b(?:dans (?:cette|la) vid[ée]o(?: d'aujourd'hui)?|dans ce reel|je vais (?:vous|te) (?:montrer|expliquer))\b"),
+     "Video preamble. Delete it and open on the payoff."),
+    (re.compile(r"(?i)^\s*(?:salut|coucou|bonjour|hello|bienvenue|yo)\b"),
      "Greeting. Nobody came to the feed to be greeted."),
     (HASHTAG_RE,
      "Hashtag in the hook. Hashtags belong at the bottom of the caption, if anywhere."),
@@ -115,7 +158,20 @@ def clamp(n):
 
 def words(text):
     # "$18,000" is one word when it is spoken, so it is one word here too.
+    # Same for the French "18 000" (normal, non-breaking or narrow space).
+    text = re.sub(r"(?<=\d)[ \u00a0\u202f](?=\d{3}\b)", "", text)
     return WORD_RE.findall(re.sub(r"(?<=\d),(?=\d)", "", text))
+
+
+def keys(token):
+    """Lookup forms of a token: itself, and the part after a French elision."""
+    t = token.lower().strip("'’")
+    m = ELISION_RE.match(t)
+    return (t, m.group(1)) if m else (t,)
+
+
+def in_set(token, s):
+    return any(k in s for k in keys(token))
 
 
 def check_length(text):
@@ -140,7 +196,7 @@ def check_specificity(text):
     nums = [n.strip() for n in NUMBER_RE.findall(text) if n.strip()]
     propers = set(PROPER_RE.findall(text))
     low = [w.lower().strip("'’") for w in words(text)]
-    spoken = [w for w in low if w in SPOKEN_NUMBERS or w in MONEY_WORDS]
+    spoken = [w for w in low if in_set(w, SPOKEN_NUMBERS) or in_set(w, MONEY_WORDS)]
     hits = len(nums) + len(propers) + len(spoken)
     score = 15.0 if hits == 0 else clamp(45 + hits * 30)
     found = ", ".join(nums[:2] + sorted(propers)[:2] + spoken[:2])
@@ -151,9 +207,9 @@ def check_specificity(text):
 def check_stakes(text):
     """Tension, cost, negation. Something the viewer might lose."""
     w = [x.lower().strip("'’") for x in words(text)]
-    hits = [x for x in w if x in STAKES]
+    hits = [x for x in w if in_set(x, STAKES)]
     markers = sorted(set(hits))
-    if re.search(r"\$\s?\d", text):
+    if re.search(r"\$\s?\d|\d\s?(?:€|euros?\b)", text):
         markers.append("a price")
     n = len(markers)
     score = {0: 20.0, 1: 70.0}.get(n, 100.0)
@@ -177,7 +233,7 @@ def check_frontload(text):
             break
     payload = None
     for i, token in enumerate(low):
-        if (token in STAKES or token in SPOKEN_NUMBERS or token in MONEY_WORDS
+        if (in_set(token, STAKES) or in_set(token, SPOKEN_NUMBERS) or in_set(token, MONEY_WORDS)
                 or NUMBER_RE.match(w[i]) or (i and PROPER_RE.match(w[i]))):
             payload = i
             break
@@ -203,9 +259,11 @@ def check_address(text):
     w = [x.lower().strip("'’") for x in words(text)]
     if re.search(r"\b(you|your|you're|youre|yourself)\b", low):
         return 100.0, "speaks to the viewer"
-    if w and w[0] in IMPERATIVES:
+    if re.search(r"\b(tu|toi|ton|ta|tes|te|vous|votre|vos)\b|\bt['’]", low):
+        return 100.0, "speaks to the viewer"
+    if w and in_set(w[0], IMPERATIVES):
         return 90.0, f"imperative opener (\"{w[0]}\")"
-    if re.search(r"\b(i|my|me|we|our)\b", low):
+    if re.search(r"\b(i|my|me|we|our|je|moi|mon|ma|mes|nous|notre|nos|on)\b|\bj['’]", low):
         return 70.0, "first person, no viewer named"
     return 35.0, "third person, nobody in the room"
 

@@ -1,119 +1,129 @@
 ---
 name: ig-caption
 description: >-
-  Write the Instagram caption - the line that survives the "... more" cut, the
-  body, the single ask, the search terms and the three hashtags - and lint it
-  before it goes out. Use when the user says "write the caption", "caption this",
-  "what do I put in the description", has a reel or a carousel ready and needs
-  the text, or asks about hashtags.
+  Écrire la légende Instagram : la ligne qui survit à la coupure « ... plus »,
+  le corps, la demande unique, les mots de recherche et les quelques hashtags,
+  puis la vérifier avant publication. À utiliser quand l'utilisateur dit
+  « écris la légende », « fais la description », « qu'est-ce que je mets en
+  description », a un reel ou un carrousel prêt et a besoin du texte, ou pose
+  une question sur les hashtags.
 ---
 
 # ig-caption
 
-One tool lives in this folder and it runs:
+Un outil est dans ce dossier et il tourne :
 
 ```bash
 python3 caption.py caption.txt
-python3 caption.py caption.txt --keywords "client proposals,agency pricing"
+python3 caption.py caption.txt --keywords "révisions maths,fractions 6e"
 ```
 
-It prints the caption the way the feed prints it: the first 125 characters in a
-box, everything else behind the tap. Read that box before you read anything
-else you wrote.
+Il affiche la légende comme le fil l'affiche : les 125 premiers caractères dans
+un cadre, tout le reste derrière le « plus ». Lis ce cadre avant de relire quoi
+que ce soit d'autre. Il comprend les demandes en français (« commente MOT »,
+« enregistre-le », « écris-moi »…). Ses messages sont en anglais : traduis-les
+pour l'utilisateur.
 
-## First, decide which job this caption has
+## D'abord, décide quel travail fait cette légende
 
-This is the decision that ruins captions when it is skipped.
+C'est la décision qui ruine les légendes quand on la saute.
 
-**Job A: the video already hooked them.** A Reel carries its own hook in the
-first two seconds, spoken and on screen. The caption is not a second hook and
-competing with the video is how you lose both. Its job is the ask, the context
-that makes the ask make sense, and the words people search.
+**Travail A : la vidéo les a déjà accrochés.** Un Reel porte sa propre accroche
+dans les deux premières secondes, parlée et à l'écran. La légende n'est pas une
+seconde accroche, et concurrencer la vidéo, c'est perdre les deux. Son travail :
+la demande, le contexte qui rend la demande logique, et les mots que les gens
+recherchent.
 
-**Job B: the caption is the content.** A photo, a single image, a carousel
-cover that opens a loop. Here line one is the hook and it works exactly like a
-Reel hook: concrete, short, and cut off at a cliff rather than mid-clause.
+**Travail B : la légende est le contenu.** Une photo, une image seule, une
+couverture de carrousel qui ouvre une boucle. Ici la première ligne est
+l'accroche et elle fonctionne exactement comme une accroche de Reel : concrète,
+courte, coupée sur un suspense plutôt qu'au milieu d'une proposition.
 
-Ask which one you are writing. If the user has a Reel with a strong hook,
-write A and say why.
+Demande-toi lequel tu écris. Si l'utilisateur a un Reel avec une accroche
+forte, écris A et dis pourquoi.
 
-## The shape
+## La forme
 
 ```
-Line 1      125 characters of visible space. Job A: the ask, plainly.
-            Job B: the hook.
-            Never a greeting, never a hashtag, never an emoji as the first
-            character.
-Body        short paragraphs, one line of white space between each. Two to six
-            of them. This is where the search terms live.
-The ask     one. Comment a keyword, save it, or DM. One.
-Hashtags    up to five, on their own line at the bottom, or none.
+Ligne 1     125 caractères visibles. Travail A : la demande, simplement.
+            Travail B : l'accroche.
+            Jamais de bonjour, jamais de hashtag, jamais d'émoji en premier
+            caractère.
+Corps       paragraphes courts, une ligne vide entre chacun. Deux à six.
+            C'est là que vivent les mots de recherche.
+La demande  une seule. Commenter un mot-clé, enregistrer, ou écrire en DM. Une.
+Hashtags    cinq au maximum, sur leur propre ligne en bas, ou aucun.
 ```
 
-Limit is 2,200 characters and almost nothing needs 2,200. A caption that earns
-the tap and then delivers 600 characters beats one that delivers 1,800.
+La limite est de 2 200 caractères et presque rien n'en a besoin. Une légende qui
+mérite le clic puis livre 600 caractères bat celle qui en livre 1 800.
 
-## Hashtags, honestly
+## Les hashtags, honnêtement
 
-Hashtags are not a reach lever any more, and the platform has now said so with
-a product change. **Instagram capped hashtags at five per post on 18 December
-2025**, down from thirty, telling creators that "using fewer (up to 5) more
-targeted hashtags, rather than many generic ones" performs better. Adam Mosseri
-had already said in February 2025 that hashtags do not work to increase reach
-and are a label, not a distribution lever.
+Les hashtags ne sont plus un levier de portée, et la plateforme l'a dit par un
+changement de produit. **Instagram a limité les hashtags à cinq par publication
+le 18 décembre 2025**, contre trente avant, en expliquant aux créateurs
+qu'« utiliser moins de hashtags (jusqu'à 5), plus ciblés, plutôt que beaucoup de
+génériques » fonctionne mieux. Adam Mosseri avait déjà dit en février 2025 que
+les hashtags n'augmentent pas la portée : ce sont des étiquettes, pas un levier
+de diffusion.
 
-So: up to five, specific, as topic labels. If the user has a block of twenty
-saved in their notes app, that block is now dead weight and the linter will
-fail it.
+Donc : cinq au maximum, précis, comme étiquettes de sujet. Si l'utilisateur a
+un bloc de vingt hashtags dans ses notes, ce bloc est maintenant du poids mort
+et le vérificateur le refusera.
 
-`#viral`, `#fyp`, `#explorepage`, `#foryou` describe nothing. Cut them.
+`#viral`, `#fyp`, `#explorepage`, `#foryou`, `#pourtoi` ne décrivent rien.
+Coupe-les.
 
-## Search terms matter more than hashtags now
+## Les mots de recherche comptent plus que les hashtags
 
-Instagram search reads the caption text. So the phrase the user wants to be
-found for goes in the caption as a phrase a human would type, in a sentence
-that reads normally. "Client proposals" as words in line three, not
-"#clientproposals" in a block at the bottom.
+La recherche Instagram lit le texte de la légende. Donc l'expression sur
+laquelle l'utilisateur veut être trouvé va dans la légende, telle qu'un humain
+la taperait, dans une phrase qui se lit normalement. « Révisions de maths »
+écrit en toutes lettres en ligne trois, pas « #revisionsmaths » dans un bloc en
+bas.
 
-Ask for two or three of those terms, then pass them to the linter:
+Demande deux ou trois de ces expressions, puis passe-les au vérificateur :
 
 ```bash
-python3 caption.py draft.txt --keywords "client proposals,agency pricing"
+python3 caption.py brouillon.txt --keywords "révisions maths,brevet maths"
 ```
 
-## Rules
+## Règles
 
-- **No link in the caption.** Captions are not clickable. A URL in the body is
-  dead text that says "I do not use this platform". Bio or DM.
-- **One ask.** Two asks is the same as none. `caption.py` counts them.
-- **The keyword ask needs a keyword people can type.** One word, no spaces, no
-  emoji, and say it out loud in the video too. `Comment CONTRACT` works.
-  `Comment "the contract guide"` does not.
-- **Write the first comment separately** if there is a link. Say so in the
-  receipt.
-- **Emoji as punctuation, not decoration.** The linter flags anything over
-  4 per 100 characters.
-- **Alt text is worth 20 seconds.** For carousels and photos, write it. It is
-  read by screen readers and by Instagram.
+- **Pas de lien dans la légende.** Les légendes ne sont pas cliquables. Une URL
+  dans le corps, c'est du texte mort qui dit « je n'utilise pas cette
+  plateforme ». Bio ou DM.
+- **Une seule demande.** Deux demandes, c'est comme aucune. `caption.py` les
+  compte.
+- **La demande par mot-clé exige un mot facile à taper.** Un mot, sans espace,
+  sans émoji, et dis-le aussi à voix haute dans la vidéo. `Commente FRACTION`
+  marche. `Commente « le guide des fractions »`, non.
+- **Écris le premier commentaire à part** s'il y a un lien. Dis-le dans le
+  récapitulatif.
+- **L'émoji sert de ponctuation, pas de décoration.** Le vérificateur signale
+  tout ce qui dépasse 4 pour 100 caractères.
+- **Le texte alternatif vaut 20 secondes.** Pour les carrousels et les photos,
+  écris-le. Il est lu par les lecteurs d'écran et par Instagram.
 
-## The loop
+## La boucle de travail
 
-1. Decide Job A or Job B and say which.
-2. Draft it.
-3. Run `/ig-human` on it. Captions are short, so slop is louder here than
-   anywhere else in the pack.
-4. Run `caption.py` with the user's search terms. Fix every FAIL. Decide on
-   every WARN out loud rather than silently.
-5. Print the copy-ready block, then the receipt:
+1. Décide Travail A ou Travail B et dis lequel.
+2. Rédige.
+3. Passe-le dans `/ig-human`. Les légendes sont courtes, donc le remplissage
+   s'entend plus fort ici que partout ailleurs dans le pack.
+4. Lance `caption.py` avec les mots de recherche de l'utilisateur. Corrige
+   chaque FAIL. Tranche chaque WARN à voix haute plutôt qu'en silence.
+5. Affiche le bloc prêt à copier, puis le récapitulatif :
 
 ```
-CAPTION READY
-job:        A - the reel carries the hook
-visible:    118 of 125 characters used before the cut
-ask:        one, comment CONTRACT
-hashtags:   3
-search:     "client proposals" in line 3, "agency pricing" in line 5
-linter:     READY
+LÉGENDE PRÊTE
+travail :     A, le reel porte l'accroche
+visible :     118 caractères sur 125 avant la coupure
+demande :     une, commente FRACTION
+hashtags :    3
+recherche :   « révisions maths » en ligne 3, « brevet maths » en ligne 5
+vérif :       READY
 ```
 
-Nothing is posted. The user pastes it.
+Rien n'est publié. L'utilisateur colle la légende.

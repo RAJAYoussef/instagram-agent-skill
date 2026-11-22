@@ -630,6 +630,252 @@
       "find": "hack",
       "replace": "trick",
       "family": "nouns"
+    },
+    {
+      "find": "plonger dans",
+      "replace": "regarder",
+      "family": "verbs",
+      "lang": "fr"
+    },
+    {
+      "find": "plongeons dans",
+      "replace": "regardons",
+      "family": "verbs",
+      "lang": "fr"
+    },
+    {
+      "find": "plongeons",
+      "replace": "regardons",
+      "family": "verbs",
+      "lang": "fr"
+    },
+    {
+      "find": "explorer en profondeur",
+      "replace": "regarder",
+      "family": "verbs",
+      "lang": "fr"
+    },
+    {
+      "find": "décrypter",
+      "replace": "expliquer",
+      "family": "verbs",
+      "lang": "fr"
+    },
+    {
+      "find": "booster",
+      "replace": "améliorer",
+      "family": "verbs",
+      "lang": "fr"
+    },
+    {
+      "find": "optimiser au maximum",
+      "replace": "améliorer",
+      "family": "verbs",
+      "lang": "fr"
+    },
+    {
+      "find": "révolutionner",
+      "replace": "changer",
+      "family": "verbs",
+      "lang": "fr"
+    },
+    {
+      "find": "sublimer",
+      "replace": "améliorer",
+      "family": "verbs",
+      "lang": "fr"
+    },
+    {
+      "find": "propulser",
+      "replace": "faire avancer",
+      "family": "verbs",
+      "lang": "fr"
+    },
+    {
+      "find": "cruciale",
+      "replace": "importante",
+      "family": "adjectives",
+      "lang": "fr"
+    },
+    {
+      "find": "incontournable",
+      "replace": "utile",
+      "family": "adjectives",
+      "lang": "fr"
+    },
+    {
+      "find": "incontournables",
+      "replace": "utiles",
+      "family": "adjectives",
+      "lang": "fr"
+    },
+    {
+      "find": "essentiel",
+      "replace": "important",
+      "family": "adjectives",
+      "lang": "fr"
+    },
+    {
+      "find": "essentielle",
+      "replace": "importante",
+      "family": "adjectives",
+      "lang": "fr"
+    },
+    {
+      "find": "fascinant",
+      "replace": "intéressant",
+      "family": "adjectives",
+      "lang": "fr"
+    },
+    {
+      "find": "captivant",
+      "replace": "intéressant",
+      "family": "adjectives",
+      "lang": "fr"
+    },
+    {
+      "find": "révolutionnaire",
+      "replace": "nouveau",
+      "family": "adjectives",
+      "lang": "fr"
+    },
+    {
+      "find": "ultime",
+      "replace": "complet",
+      "family": "adjectives",
+      "lang": "fr"
+    },
+    {
+      "find": "véritable",
+      "replace": "",
+      "family": "adjectives",
+      "lang": "fr"
+    },
+    {
+      "find": "redoutablement",
+      "replace": "très",
+      "family": "adjectives",
+      "lang": "fr"
+    },
+    {
+      "find": "indéniablement",
+      "replace": "",
+      "family": "connectives",
+      "lang": "fr"
+    },
+    {
+      "find": "incontestablement",
+      "replace": "",
+      "family": "connectives",
+      "lang": "fr"
+    },
+    {
+      "find": "en somme",
+      "replace": "bref",
+      "family": "connectives",
+      "lang": "fr"
+    },
+    {
+      "find": "par ailleurs",
+      "replace": "aussi",
+      "family": "connectives",
+      "lang": "fr"
+    },
+    {
+      "find": "de surcroît",
+      "replace": "en plus",
+      "family": "connectives",
+      "lang": "fr"
+    },
+    {
+      "find": "en outre",
+      "replace": "en plus",
+      "family": "connectives",
+      "lang": "fr"
+    },
+    {
+      "find": "néanmoins",
+      "replace": "mais",
+      "family": "connectives",
+      "lang": "fr"
+    },
+    {
+      "find": "véritable game changer",
+      "replace": "vrai changement",
+      "family": "nouns",
+      "lang": "fr"
+    },
+    {
+      "find": "game changer",
+      "replace": "vrai changement",
+      "family": "nouns",
+      "lang": "fr"
+    },
+    {
+      "find": "pépite",
+      "replace": "bonne idée",
+      "family": "nouns",
+      "lang": "fr"
+    },
+    {
+      "find": "pépites",
+      "replace": "bonnes idées",
+      "family": "nouns",
+      "lang": "fr"
+    },
+    {
+      "find": "astuce ultime",
+      "replace": "astuce",
+      "family": "nouns",
+      "lang": "fr"
+    },
+    {
+      "find": "guide ultime",
+      "replace": "guide",
+      "family": "nouns",
+      "lang": "fr"
+    },
+    {
+      "find": "boîte à outils",
+      "replace": "outils",
+      "family": "nouns",
+      "lang": "fr"
+    },
+    {
+      "find": "levier",
+      "replace": "moyen",
+      "family": "nouns",
+      "lang": "fr"
+    },
+    {
+      "find": "leviers",
+      "replace": "moyens",
+      "family": "nouns",
+      "lang": "fr"
+    },
+    {
+      "find": "synergie",
+      "replace": "travail commun",
+      "family": "nouns",
+      "lang": "fr"
+    },
+    {
+      "find": "paradigme",
+      "replace": "façon de voir",
+      "family": "nouns",
+      "lang": "fr"
+    },
+    {
+      "find": "game-changer",
+      "replace": "vrai changement",
+      "family": "nouns",
+      "lang": "fr"
+    },
+    {
+      "find": "crucial",
+      "replace": "important",
+      "family": "adjectives",
+      "lang": "fr"
     }
   ],
   "phrases": [
@@ -922,6 +1168,186 @@
       "find": "go viral overnight",
       "replace": "get reach",
       "family": "nouns"
+    },
+    {
+      "find": "dans un monde en constante évolution",
+      "replace": "aujourd'hui",
+      "family": "openers",
+      "lang": "fr"
+    },
+    {
+      "find": "dans le monde d'aujourd'hui",
+      "replace": "aujourd'hui",
+      "family": "openers",
+      "lang": "fr"
+    },
+    {
+      "find": "à l'ère du numérique",
+      "replace": "aujourd'hui",
+      "family": "openers",
+      "lang": "fr"
+    },
+    {
+      "find": "dans le paysage actuel",
+      "replace": "aujourd'hui",
+      "family": "openers",
+      "lang": "fr"
+    },
+    {
+      "find": "il est important de noter que",
+      "replace": "",
+      "family": "openers",
+      "lang": "fr"
+    },
+    {
+      "find": "il est essentiel de",
+      "replace": "il faut",
+      "family": "openers",
+      "lang": "fr"
+    },
+    {
+      "find": "il convient de noter que",
+      "replace": "",
+      "family": "openers",
+      "lang": "fr"
+    },
+    {
+      "find": "force est de constater que",
+      "replace": "",
+      "family": "openers",
+      "lang": "fr"
+    },
+    {
+      "find": "que vous soyez débutant ou expert",
+      "replace": "",
+      "family": "openers",
+      "lang": "fr"
+    },
+    {
+      "find": "que tu sois débutant ou expert",
+      "replace": "",
+      "family": "openers",
+      "lang": "fr"
+    },
+    {
+      "find": "en conclusion",
+      "replace": "bref",
+      "family": "closers",
+      "lang": "fr"
+    },
+    {
+      "find": "pour conclure",
+      "replace": "bref",
+      "family": "closers",
+      "lang": "fr"
+    },
+    {
+      "find": "et vous, qu'en pensez-vous",
+      "replace": "",
+      "family": "closers",
+      "lang": "fr"
+    },
+    {
+      "find": "le meilleur reste à venir",
+      "replace": "",
+      "family": "closers",
+      "lang": "fr"
+    },
+    {
+      "find": "joue un rôle crucial",
+      "replace": "compte",
+      "family": "nouns",
+      "lang": "fr"
+    },
+    {
+      "find": "joue un rôle clé",
+      "replace": "compte",
+      "family": "nouns",
+      "lang": "fr"
+    },
+    {
+      "find": "un véritable atout",
+      "replace": "un atout",
+      "family": "nouns",
+      "lang": "fr"
+    },
+    {
+      "find": "prendre son envol",
+      "replace": "démarrer",
+      "family": "nouns",
+      "lang": "fr"
+    },
+    {
+      "find": "arrête de scroller",
+      "replace": "",
+      "family": "openers",
+      "lang": "fr"
+    },
+    {
+      "find": "arrêtez de scroller",
+      "replace": "",
+      "family": "openers",
+      "lang": "fr"
+    },
+    {
+      "find": "dans la vidéo d'aujourd'hui",
+      "replace": "",
+      "family": "openers",
+      "lang": "fr"
+    },
+    {
+      "find": "dans cette vidéo",
+      "replace": "",
+      "family": "openers",
+      "lang": "fr"
+    },
+    {
+      "find": "abonne-toi pour plus de contenu",
+      "replace": "",
+      "family": "closers",
+      "lang": "fr"
+    },
+    {
+      "find": "abonnez-vous pour plus de contenu",
+      "replace": "",
+      "family": "closers",
+      "lang": "fr"
+    },
+    {
+      "find": "abonne-toi pour plus",
+      "replace": "",
+      "family": "closers",
+      "lang": "fr"
+    },
+    {
+      "find": "identifie quelqu'un qui a besoin de ça",
+      "replace": "",
+      "family": "closers",
+      "lang": "fr"
+    },
+    {
+      "find": "identifie quelqu'un qui",
+      "replace": "",
+      "family": "closers",
+      "lang": "fr"
+    },
+    {
+      "find": "l'algorithme adore",
+      "replace": "Instagram pousse",
+      "family": "nouns",
+      "lang": "fr"
+    },
+    {
+      "find": "battre l'algorithme",
+      "replace": "avoir de la portée",
+      "family": "nouns",
+      "lang": "fr"
+    },
+    {
+      "find": "cours, ne marche pas",
+      "replace": "",
+      "family": "closers",
+      "lang": "fr"
     }
   ],
   "structures": [
@@ -1020,6 +1446,49 @@
       "regex": "(?i)\\b(?:follow for more|tag someone who|double tap if|share this if|comment below if)\\b",
       "name": "Reflex follow or tag bait",
       "fix": "Ask for the one action this post actually earns. The generic ask trains the audience to ignore every ask."
+    },
+    {
+      "id": "fr-pas-juste",
+      "lang": "fr",
+      "regex": "(?i)\\bce n'est pas (?:juste|seulement|que) [^.!?\\n]{2,60}[,.] c'est\\b",
+      "name": "« Ce n'est pas juste X, c'est Y »",
+      "fix": "Dis la seule chose que tu veux dire. Supprime la moitié qui sert de mise en place."
+    },
+    {
+      "id": "fr-non-seulement",
+      "lang": "fr",
+      "regex": "(?i)\\bnon seulement\\b[^.!?\\n]{2,80}\\bmais (?:aussi|également)\\b",
+      "name": "« Non seulement X mais aussi Y »",
+      "fix": "Coupe en deux phrases, ou supprime la moitié la plus faible."
+    },
+    {
+      "id": "fr-question-rhetorique",
+      "lang": "fr",
+      "regex": "(?m)^\\s*(?:Le résultat|La raison|Le secret|La clé|La différence|Pourquoi|Comment)\\s*\\?\\s*$",
+      "name": "Question rhétorique d'un mot (« Le résultat ? »)",
+      "fix": "Donne directement la réponse. La révélation mise en scène est le tic le plus reconnaissable."
+    },
+    {
+      "id": "fr-preambule",
+      "lang": "fr",
+      "regex": "(?i)\\b(?:dans cette vidéo|aujourd'hui) je (?:vais|vous|te) (?:vous |te )?(?:montrer|expliquer|parler)\\b",
+      "name": "Préambule vidéo",
+      "fix": "Supprime-le et commence par la chute."
+    },
+    {
+      "id": "fr-appat",
+      "lang": "fr",
+      "regex": "(?i)\\b(?:abonne-toi pour|abonnez-vous pour|identifie quelqu'un|tague quelqu'un|double tap si|partage si|commente si)\\b",
+      "name": "Appât réflexe (abonnement ou identification)",
+      "fix": "Demande la seule action que cette publication mérite vraiment."
+    },
+    {
+      "id": "fr-hesite-pas",
+      "lang": "fr",
+      "regex": "(?i)\\bn'h[ée]sit(?:e|ez) pas à\\b",
+      "name": "« N'hésite pas à… »",
+      "fix": "Formule de politesse vide. Donne l'ordre directement : « Enregistre-le », « Écris-moi »."
     }
-  ]
+  ],
+  "note_fr": "Les entrées marquées \"lang\": \"fr\" sont le lexique français. Modifie-les librement : retire un mot que tu utilises vraiment."
 }

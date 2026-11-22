@@ -18,7 +18,12 @@
       "on_screen": "$18,000 MISTAKE",
       "best_for": "Trust, fast. People finish the videos where you are the one who looks bad.",
       "trap": "A fake cost. 'It cost me my peace of mind' is not a number and everybody can hear that.",
-      "match": "\\$\\s?\\d[\\d,]*\\s+(?:is|was) what\\b|\\bcost (?:me|us|him|her|them)\\b|\\blost\\b[^.!?]{0,20}\\$\\s?\\d"
+      "match": "\\$\\s?\\d[\\d,]*\\s+(?:is|was) what\\b|\\bcost (?:me|us|him|her|them)\\b|\\blost\\b[^.!?]{0,20}\\$\\s?\\d",
+      "nom_fr": "Confession du coût",
+      "modele_fr": "{Montant précis}, c'est ce que {une erreur} m'a coûté.",
+      "exemple_fr": "18 000 €, c'est ce qu'une clause oubliée m'a coûté.",
+      "ecran_fr": "ERREUR À 18 000 €",
+      "match_fr": "\\d[\\d  ]*\\s?(?:€|euros?)\\s*,?\\s*c'est ce que|\\bm'a coût[ée]|\\b(?:nous|lui|leur) a coût[ée]|\\bperdu\\b[^.!?]{0,20}\\d[\\d  ]*\\s?(?:€|euros?)"
     },
     {
       "id": 2,
@@ -28,7 +33,12 @@
       "on_screen": "STOP POSTING DAILY",
       "best_for": "Saves and arguments. The imperative gets attention that a statement does not.",
       "trap": "Telling people to stop doing something nobody does. The habit has to be one the viewer recognises in themselves.",
-      "match": "^\\s*(?:stop|quit|never|don'?t|dont|please)\\b[^.!?]{0,30}\\b(?:do|be|make|buy|use|start|say|post|send|take|charge)?\\b|\\b(?:do not|don'?t|dont|never) (?:do|be|make|buy|use|start|say|post|take)\\b|\\bquit your\\b"
+      "match": "^\\s*(?:stop|quit|never|don'?t|dont|please)\\b[^.!?]{0,30}\\b(?:do|be|make|buy|use|start|say|post|send|take|charge)?\\b|\\b(?:do not|don'?t|dont|never) (?:do|be|make|buy|use|start|say|post|take)\\b|\\bquit your\\b",
+      "nom_fr": "Ordre négatif",
+      "modele_fr": "Arrête de {action courante}. Fais {alternative} à la place.",
+      "exemple_fr": "Arrête de recopier tes cours. Dessine-les.",
+      "ecran_fr": "ARRÊTE DE RECOPIER",
+      "match_fr": "^\\s*(?:arr[êe]te[sz]?|ne (?:fais|faites|dis|achetez?|utilise[sz]?)\\s+(?:plus|jamais|pas))\\b|\\bne (?:fais|faites) (?:jamais|plus)\\b"
     },
     {
       "id": 3,
@@ -38,7 +48,12 @@
       "on_screen": "YOUR FIRST 30 WILL FLOP",
       "best_for": "New audiences. It positions you as the person who says the quiet part.",
       "trap": "Picking a truth everybody already says. If the comments are agreeing before you finish, it was not a secret.",
-      "match": "\\b(?:nobody|no one|nobody ever)\\s+(?:ever\\s+)?(?:tells|told|talks|talked|says|said|mentions|teaches)\\b|\\bwhat (?:nobody|no one) (?:tells|says)\\b"
+      "match": "\\b(?:nobody|no one|nobody ever)\\s+(?:ever\\s+)?(?:tells|told|talks|talked|says|said|mentions|teaches)\\b|\\bwhat (?:nobody|no one) (?:tells|says)\\b",
+      "nom_fr": "Personne ne te dit",
+      "modele_fr": "Personne ne te dit que {vérité qui dérange sur ce qu'il veut}.",
+      "exemple_fr": "Personne ne te dit que tes 30 premiers reels sont censés faire un flop.",
+      "ecran_fr": "PERSONNE NE TE LE DIT",
+      "match_fr": "\\b(?:personne|aucun prof|on) ne (?:te|vous|nous) (?:le )?(?:dit|disait|explique|apprend|a dit|a jamais dit)\\b|\\bce que personne ne\\b"
     },
     {
       "id": 4,
@@ -48,7 +63,12 @@
       "on_screen": "$2,000 -> $12",
       "best_for": "Demos and tool videos. The price gap does the work.",
       "trap": "Overstating the replacement. If it replaced 60% of the job, say 60%, or the comments will say it for you.",
-      "match": "\\breplaced?\\b[^.!?]*\\$\\s?\\d|\\$\\s?\\d[^.!?]*\\breplaced?\\b|\\binstead of (?:paying|hiring)\\b"
+      "match": "\\breplaced?\\b[^.!?]*\\$\\s?\\d|\\$\\s?\\d[^.!?]*\\breplaced?\\b|\\binstead of (?:paying|hiring)\\b",
+      "nom_fr": "Le remplacement",
+      "modele_fr": "{Cette chose} a remplacé {chose chère} pour {prix}.",
+      "exemple_fr": "Une appli à 0 € a remplacé mes cours particuliers à 40 € l'heure.",
+      "ecran_fr": "0 € AU LIEU DE 40 €",
+      "match_fr": "\\bremplac[ée]\\w*\\b[^.!?]*\\d\\s?(?:€|euros?)|\\d\\s?(?:€|euros?)[^.!?]*\\bremplac|\\bau lieu de (?:payer|prendre|embaucher)\\b"
     },
     {
       "id": 5,
@@ -58,7 +78,12 @@
       "on_screen": "5 HOURS -> 20 MIN",
       "best_for": "Process videos where the payoff is speed. Reads instantly on screen.",
       "trap": "A ratio nobody believes. 40 hours to 4 seconds gets treated as a lie even when it is true.",
-      "match": "\\bused to take\\b|\\bnow (?:it )?(?:only )?takes?\\b|\\btakes? (?:me )?\\d+\\s*(?:sec|second|min|minute|hour|hr)"
+      "match": "\\bused to take\\b|\\bnow (?:it )?(?:only )?takes?\\b|\\btakes? (?:me )?\\d+\\s*(?:sec|second|min|minute|hour|hr)",
+      "nom_fr": "Temps écrasé",
+      "modele_fr": "Avant, ça me prenait {longue durée}. Maintenant, {courte durée}.",
+      "exemple_fr": "Un devis me prenait cinq heures. Maintenant, vingt minutes.",
+      "ecran_fr": "5 HEURES -> 20 MIN",
+      "match_fr": "\\bme prenai(?:t|ent)\\b|\\bmaintenant,? (?:ça (?:me )?prend|il (?:me )?faut|en)\\b|\\ben \\d+\\s*(?:s|sec|secondes?|min|minutes?|h|heures?)\\b"
     },
     {
       "id": 6,
@@ -68,7 +93,12 @@
       "on_screen": "60 DAYS. REAL NUMBERS.",
       "best_for": "Experiments. Pairs with a screen recording of the real dashboard, which is the whole value.",
       "trap": "Not showing the screen. A numbers video with no screen recording is a numbers claim.",
-      "match": "\\bi\\s+\\w+(?:ed)?\\s+[^.!?]{0,30}\\bfor\\s+\\d+\\s+(?:days?|weeks?|months?|years?)\\b|\\bhere (?:are|is) (?:the|my)\\b[^.!?]*\\bnumbers\\b|\\bwe(?:'ll| will)? do \\$\\s?\\d"
+      "match": "\\bi\\s+\\w+(?:ed)?\\s+[^.!?]{0,30}\\bfor\\s+\\d+\\s+(?:days?|weeks?|months?|years?)\\b|\\bhere (?:are|is) (?:the|my)\\b[^.!?]*\\bnumbers\\b|\\bwe(?:'ll| will)? do \\$\\s?\\d",
+      "nom_fr": "Le relevé",
+      "modele_fr": "J'ai {fait la chose} pendant {N jours}. Voici les vrais chiffres.",
+      "exemple_fr": "J'ai fait 10 minutes de calcul mental par jour pendant 30 jours. Voici mes notes.",
+      "ecran_fr": "30 JOURS : LES CHIFFRES",
+      "match_fr": "\\bpendant\\s+\\d+\\s+(?:jours?|semaines?|mois|ans)\\b|\\bvoici (?:les|mes) (?:vrais )?(?:chiffres|notes|résultats)\\b"
     },
     {
       "id": 7,
@@ -78,7 +108,12 @@
       "on_screen": "YOUR CAPTIONS ARE CUT",
       "best_for": "Teaching. The 'not your fault' half stops it reading as an insult, which is what kills this one.",
       "trap": "Skipping the absolution. 'You are doing it wrong' on its own makes people leave rather than learn.",
-      "match": "\\b(?:big(?:gest)?|common|the) mistake\\b|\\bmistake (?:that|people|i)\\b|\\byou'?(?:re| are) doing\\b[^.!?]*\\bwrong\\b|\\bdoing (?:it|this) wrong\\b"
+      "match": "\\b(?:big(?:gest)?|common|the) mistake\\b|\\bmistake (?:that|people|i)\\b|\\byou'?(?:re| are) doing\\b[^.!?]*\\bwrong\\b|\\bdoing (?:it|this) wrong\\b",
+      "nom_fr": "Mauvaise façon, bonne façon",
+      "modele_fr": "Tu fais {chose} mal, et ce n'est pas ta faute. {La solution}.",
+      "exemple_fr": "Tu apprends tes tables à l'envers, et ce n'est pas ta faute.",
+      "ecran_fr": "TU LE FAIS À L'ENVERS",
+      "match_fr": "\\b(?:la plus grosse|l'erreur|une erreur) (?:que|qui|de)\\b|\\btu (?:le )?fais (?:mal|faux|à l'envers)\\b|\\bvous (?:le )?faites (?:mal|faux)\\b"
     },
     {
       "id": 8,
@@ -88,7 +123,12 @@
       "on_screen": "6 YEARS INSIDE",
       "best_for": "Authority without a credential slide. Works only if the years are real.",
       "trap": "Promising a secret and delivering the brochure. The comments are merciless about this one.",
-      "match": "\\bi (?:spent|worked|ran|was|have been)\\b[^.!?]*\\b\\d+\\s*\\+?\\s*years?\\b|\\bwe never (?:told|said|showed)\\b|\\bnobody (?:puts|tells you about)\\b|\\bi (?:sell|sold|run)\\b[^.!?]*\\$\\s?\\d"
+      "match": "\\bi (?:spent|worked|ran|was|have been)\\b[^.!?]*\\b\\d+\\s*\\+?\\s*years?\\b|\\bwe never (?:told|said|showed)\\b|\\bnobody (?:puts|tells you about)\\b|\\bi (?:sell|sold|run)\\b[^.!?]*\\$\\s?\\d",
+      "nom_fr": "Fuite d'initié",
+      "modele_fr": "J'ai passé {N ans} {à l'intérieur}. Voilà ce qu'on ne disait jamais.",
+      "exemple_fr": "J'ai été prof de maths 12 ans. Voilà ce qu'on ne dit jamais aux parents.",
+      "ecran_fr": "12 ANS PROF : LA VÉRITÉ",
+      "match_fr": "\\bj'ai (?:passé|été|travaillé)\\b[^.!?]*\\b\\d+\\s*ans\\b|\\bon ne (?:dit|disait) jamais\\b|\\bce qu'on ne (?:dit|vous dit|te dit)\\b"
     },
     {
       "id": 9,
@@ -98,7 +138,12 @@
       "on_screen": "STEAL THIS",
       "best_for": "Saves and sends, which are the two metrics that move reach the most.",
       "trap": "The artifact not being on screen. If they cannot screenshot it, there is nothing to steal.",
-      "match": "^\\s*steal\\b|\\bsteal (?:this|these|my)\\b|^\\s*(?:here'?s|this is) (?:the|my) (?:exact|literal)\\b"
+      "match": "^\\s*steal\\b|\\bsteal (?:this|these|my)\\b|^\\s*(?:here'?s|this is) (?:the|my) (?:exact|literal)\\b",
+      "nom_fr": "Le vol",
+      "modele_fr": "Vole ce {outil}. Il m'a fallu {durée} pour le mettre au point.",
+      "exemple_fr": "Vole la fiche qui m'a fait passer de 8 à 15 en maths.",
+      "ecran_fr": "VOLE ÇA",
+      "match_fr": "^\\s*vole[sz]?\\b|\\bvole[sz]? (?:ça|cette|ce|mon|ma|mes)\\b|^\\s*voici (?:la|le|ma|mon) (?:méthode|fiche|modèle) exact"
     },
     {
       "id": 10,
@@ -108,7 +153,12 @@
       "on_screen": "VIEWS BUT NO FOLLOWERS?",
       "best_for": "Qualifying hard. Fewer people stay, and the ones who do are the ones who buy.",
       "trap": "A situation so broad it qualifies nobody. 'If you want to grow' is not a situation.",
-      "match": "^\\s*if (?:you|i|we|your|my|they)\\b"
+      "match": "^\\s*if (?:you|i|we|your|my|they)\\b",
+      "nom_fr": "Si ceci, alors regarde",
+      "modele_fr": "Si tu {situation précise}, ces {durée courte} règlent le problème.",
+      "exemple_fr": "Si ton enfant bloque sur les fractions, ces 30 secondes vont l'aider.",
+      "ecran_fr": "BLOQUÉ SUR LES FRACTIONS ?",
+      "match_fr": "^\\s*(?:si|s')\\s*(?:tu|vous|ton|ta|tes|votre|vos|ton enfant|il|elle)\\b"
     },
     {
       "id": 11,
@@ -118,7 +168,12 @@
       "on_screen": "5 EDITS. #4 IS THE ONE.",
       "best_for": "Retention through the middle: naming a favourite gives people a reason to stay past three.",
       "trap": "N above seven. Nobody believes you have nine good ones, and you do not.",
-      "match": "^\\s*(?:here are\\s+)?\\d+\\s+\\w+|\\bnumber \\d+\\b|\\b(?:three|four|five|seven|ten)\\s+\\w+\\s+(?:every|that|you)\\b"
+      "match": "^\\s*(?:here are\\s+)?\\d+\\s+\\w+|\\bnumber \\d+\\b|\\b(?:three|four|five|seven|ten)\\s+\\w+\\s+(?:every|that|you)\\b",
+      "nom_fr": "Liste avec un favori",
+      "modele_fr": "{N} {choses} qui {résultat}. La n°{k}, personne ne l'utilise.",
+      "exemple_fr": "3 astuces pour réviser le brevet. La 3e, personne ne l'utilise.",
+      "ecran_fr": "3 ASTUCES BREVET",
+      "match_fr": "^\\s*\\d+\\s+\\w+|\\bla (?:n°|numéro )\\s?\\d+\\b|^\\s*(?:trois|quatre|cinq|sept|dix)\\s+\\w+"
     },
     {
       "id": 12,
@@ -128,7 +183,12 @@
       "on_screen": "\"I HATE BEING ON CAMERA\"",
       "best_for": "Selling to the people who already said no once.",
       "trap": "Inventing the objection. Pull it verbatim from a DM or a comment, including the bad grammar.",
-      "match": "^\\s*[\\\"“'][^\\\"”']{5,120}[\\\"”'][,.]?\\s*(?:fine|ok|okay|sure|right|here)"
+      "match": "^\\s*[\\\"“'][^\\\"”']{5,120}[\\\"”'][,.]?\\s*(?:fine|ok|okay|sure|right|here)",
+      "nom_fr": "L'objection",
+      "modele_fr": "« {Objection qu'on entend vraiment}. » D'accord. Voici la version qui marche quand même.",
+      "exemple_fr": "« Je suis nul en maths. » D'accord. Voici comment on commence quand même.",
+      "ecran_fr": "« JE SUIS NUL EN MATHS »",
+      "match_fr": "^\\s*[«\\\"“][^»\\\"”]{5,120}[»\\\"”][,.]?\\s*(?:d'accord|ok|bon|soit|très bien|voici)"
     },
     {
       "id": 13,
@@ -138,7 +198,12 @@
       "on_screen": "MARCH  /  NOW",
       "best_for": "Anything visual. The cut between the two frames is the hook, the words are secondary.",
       "trap": "Three levers. Name one thing that changed or the transformation stops being believable.",
-      "match": "\\b(?:this|that) was\\b[^.!?]*[.!?]\\s*(?:this|that) is\\b|\\bbefore\\b[^.!?]*\\bafter\\b|\\bi (?:look|looked) back at\\b"
+      "match": "\\b(?:this|that) was\\b[^.!?]*[.!?]\\s*(?:this|that) is\\b|\\bbefore\\b[^.!?]*\\bafter\\b|\\bi (?:look|looked) back at\\b",
+      "nom_fr": "Avant / après à l'écran",
+      "modele_fr": "{Montre l'ancien}. {Montre le nouveau}. {Une phrase sur le levier}.",
+      "exemple_fr": "Ça, c'était sa copie en septembre. Ça, c'est en décembre.",
+      "ecran_fr": "SEPTEMBRE -> DÉCEMBRE",
+      "match_fr": "\\bça,? c'était\\b[^.!?]*[.!?]\\s*ça,? c'est\\b|\\bavant\\b[^.!?]*\\baprès\\b"
     },
     {
       "id": 14,
@@ -148,7 +213,12 @@
       "on_screen": "PHOTOGRAPHERS UNDER $2K",
       "best_for": "Cutting a broad audience down to the one that converts. Send rate goes up because people tag each other.",
       "trap": "A group so large it is not a callout. 'Entrepreneurs' is not a group.",
-      "match": "^\\s*(?:every|all|any)\\s+\\w+|^\\s*[a-z][\\w ]{2,28}(?:ers|ists|ors|ants)\\b\\s*[,:]|^\\s*for (?:viewers|people|anyone|those|everyone)\\b|^\\s*(?:attention|listen up)\\b"
+      "match": "^\\s*(?:every|all|any)\\s+\\w+|^\\s*[a-z][\\w ]{2,28}(?:ers|ists|ors|ants)\\b\\s*[,:]|^\\s*for (?:viewers|people|anyone|those|everyone)\\b|^\\s*(?:attention|listen up)\\b",
+      "nom_fr": "L'interpellation",
+      "modele_fr": "{Groupe précis}, c'est celle que vous ignorez depuis le début.",
+      "exemple_fr": "Parents d'élèves de 6e, cette règle va vous sauver l'année.",
+      "ecran_fr": "PARENTS DE 6E",
+      "match_fr": "^\\s*(?:tous les|toutes les|chaque|chers?|parents|profs?|élèves|collégiens|lycéens|étudiants)\\b[^.!?]{0,30}[,:]|^\\s*(?:pour (?:tous )?ceux qui|attention)\\b"
     },
     {
       "id": 15,
@@ -158,7 +228,12 @@
       "on_screen": "47 FLOPS, THEN THIS",
       "best_for": "People at the start, which is most of the audience. High comment rate.",
       "trap": "Making the change sound like luck. If the answer is 'I got lucky', there is no video.",
-      "match": "\\bmy first\\s+\\d+\\b|\\bfirst\\s+\\d+\\s+(?:reels?|videos?|posts?|clients?|months?)\\b"
+      "match": "\\bmy first\\s+\\d+\\b|\\bfirst\\s+\\d+\\s+(?:reels?|videos?|posts?|clients?|months?)\\b",
+      "nom_fr": "Le registre des flops",
+      "modele_fr": "Mes {N} premiers {essais} n'ont rien donné. Voici ce qui a changé au {N+1}e.",
+      "exemple_fr": "Mes 20 premiers exercices étaient faux. Voici ce qui a changé au 21e.",
+      "ecran_fr": "20 ÉCHECS, PUIS…",
+      "match_fr": "\\bmes \\d+ premi(?:er|ère)s?\\b|\\bles \\d+ premi(?:er|ère)s? (?:reels?|vidéos?|contrôles?|exercices?|mois)\\b"
     },
     {
       "id": 16,
@@ -168,7 +243,12 @@
       "on_screen": "ASKED EVERY WEEK",
       "best_for": "Search. A question typed the way people type it is what Instagram search is matching against.",
       "trap": "Tidying the question up. The value is that it is in their words, typos and all.",
-      "match": "^\\s*[\\\"“']?(?:how|what|what'?s|why|when|where|who|which|can|should|do|does|did|is|are|have you|would you)\\b[^?]{3,110}\\?"
+      "match": "^\\s*[\\\"“']?(?:how|what|what'?s|why|when|where|who|which|can|should|do|does|did|is|are|have you|would you)\\b[^?]{3,110}\\?",
+      "nom_fr": "La question mot pour mot",
+      "modele_fr": "« {Question exactement comme on me l'a posée} ? » On me la pose chaque semaine.",
+      "exemple_fr": "« Pourquoi on divise par une fraction en multipliant ? » On me la pose chaque semaine.",
+      "ecran_fr": "LA QUESTION QU'ON ME POSE",
+      "match_fr": "^\\s*[«\\\"“]?\\s*(?:comment|pourquoi|quand|où|qui|quel(?:le)?s?|est-ce que|c'est quoi|qu'est-ce|combien|peut-on|faut-il)\\b[^?]{3,110}\\?"
     },
     {
       "id": 17,
@@ -178,7 +258,12 @@
       "on_screen": "CAROUSELS vs REELS",
       "best_for": "Comments. People arrive already holding an opinion, which is the point.",
       "trap": "Refusing to pick. A comparison with a diplomatic ending is a video with no ending.",
-      "match": "\\b(?:vs\\.?|versus)\\b|\\bdifferences? between\\b|\\b(?:a|the) or (?:b|the)\\b"
+      "match": "\\b(?:vs\\.?|versus)\\b|\\bdifferences? between\\b|\\b(?:a|the) or (?:b|the)\\b",
+      "nom_fr": "Face à face",
+      "modele_fr": "{A} contre {B}. J'ai testé les deux pendant {durée} et il n'y a pas photo.",
+      "exemple_fr": "Fiches contre exercices. J'ai testé les deux pendant un trimestre.",
+      "ecran_fr": "FICHES VS EXERCICES",
+      "match_fr": "\\b(?:vs\\.?|versus|contre)\\b|\\bdifférences? entre\\b"
     },
     {
       "id": 18,
@@ -188,7 +273,12 @@
       "on_screen": "WATCH THIS",
       "best_for": "Screen recordings and anything with a visible result. No setup at all, the hand is already moving.",
       "trap": "A result that takes twelve seconds to arrive. If the payoff is slow, cut to it and show the wait afterwards.",
-      "match": "^\\s*watch (?:what|this|me)\\b|^\\s*(?:let me|lemme) show you\\b|^\\s*repeat after me\\b"
+      "match": "^\\s*watch (?:what|this|me)\\b|^\\s*(?:let me|lemme) show you\\b|^\\s*repeat after me\\b",
+      "nom_fr": "Démo à froid",
+      "modele_fr": "{Commencer en pleine action.} Regarde ce que ça fait.",
+      "exemple_fr": "Regarde ce qui se passe quand je coupe ce gâteau en huit.",
+      "ecran_fr": "REGARDE ÇA",
+      "match_fr": "^\\s*regarde[sz]? (?:ce|ça|bien|comment|moi)\\b|^\\s*(?:laisse|laissez)-moi (?:te|vous) montrer\\b|^\\s*répète après moi\\b"
     },
     {
       "id": 19,
@@ -198,7 +288,12 @@
       "on_screen": "BEFORE YOU POST AGAIN",
       "best_for": "Urgency that is real. Platform changes, seasonal windows, policy updates.",
       "trap": "Manufactured urgency. One fake deadline and every future one is discounted.",
-      "match": "\\bbefore (?:you|it|they|the)\\b[^.!?]*\\b(?:change|changes|end|ends|close|closes|expires|goes)\\b|\\bchanges on\\b|\\bby 20\\d\\d\\b"
+      "match": "\\bbefore (?:you|it|they|the)\\b[^.!?]*\\b(?:change|changes|end|ends|close|closes|expires|goes)\\b|\\bchanges on\\b|\\bby 20\\d\\d\\b",
+      "nom_fr": "La date limite",
+      "modele_fr": "{Chose} change le {date}. Fais {action} avant.",
+      "exemple_fr": "Le brevet est dans 30 jours. Fais ça cette semaine.",
+      "ecran_fr": "J-30 AVANT LE BREVET",
+      "match_fr": "\\bavant (?:le|la|que|les)\\b[^.!?]*\\b(?:change|fin|termine|ferme|expire)\\b|\\bdans \\d+ jours\\b|\\bj-\\d+\\b|\\bd'ici (?:le|la|20\\d\\d)\\b"
     },
     {
       "id": 20,
@@ -208,7 +303,12 @@
       "on_screen": "YOU DON'T NEED A NICHE",
       "best_for": "Relief. Very high save rate, because it removes a blocker rather than adding a task.",
       "trap": "Removing the blocker and putting nothing in its place. The second half is the whole video.",
-      "match": "\\byou (?:do not|don'?t|dont) need\\b|\\bstop (?:trying to|worrying about)\\b"
+      "match": "\\byou (?:do not|don'?t|dont) need\\b|\\bstop (?:trying to|worrying about)\\b",
+      "nom_fr": "La permission",
+      "modele_fr": "Tu n'as pas besoin de {ce que tout le monde dit qu'il faut}.",
+      "exemple_fr": "Tu n'as pas besoin d'être doué en maths pour avoir 15.",
+      "ecran_fr": "PAS BESOIN D'ÊTRE DOUÉ",
+      "match_fr": "\\b(?:tu n'as|t'as|vous n'avez) pas besoin\\b|\\barrête[sz]? (?:d'essayer|de t'inquiéter|de stresser)\\b"
     },
     {
       "id": 21,
@@ -218,7 +318,12 @@
       "on_screen": "HE ASKED FOR A REFUND",
       "best_for": "Stories. Starting mid-scene makes the viewer feel they arrived late, which is a reason to stay.",
       "trap": "Never going back to fill in the gap. Deliver the setup by second eight or it reads as a mistake.",
-      "match": "^\\s*(?:\\.\\.\\.|…)|^\\s*(?:and (?:that'?s|that is|then) when|so (?:he|she|they) (?:said|asked))\\b|^\\s*(?:uh|um)\\b"
+      "match": "^\\s*(?:\\.\\.\\.|…)|^\\s*(?:and (?:that'?s|that is|then) when|so (?:he|she|they) (?:said|asked))\\b|^\\s*(?:uh|um)\\b",
+      "nom_fr": "Départ en pleine phrase",
+      "modele_fr": "{…et c'est là que {le tournant}.}",
+      "exemple_fr": "…et là, elle a compris les fractions en dix secondes.",
+      "ecran_fr": "…ET LÀ",
+      "match_fr": "^\\s*(?:\\.\\.\\.|…)|^\\s*(?:et (?:c'est )?là(?: que)?|alors (?:il|elle|ils) (?:a|m'a) dit)\\b|^\\s*(?:euh|bah)\\b"
     },
     {
       "id": 22,
@@ -228,7 +333,12 @@
       "on_screen": "NICE GUYS FINISH FIRST",
       "best_for": "Comments. The viewer has to stop and check whether they misheard you.",
       "trap": "Flipping a saying nobody says. The original has to be a reflex, or the inversion is just a sentence.",
-      "match": "^\\s*[A-Za-z][\\w' ]{2,34}\\b(?:finish|finishes|win|wins|lose|loses|beats?|is|are)\\s+(?:first|last|dead|wrong|right|better|overrated|underrated)\\b"
+      "match": "^\\s*[A-Za-z][\\w' ]{2,34}\\b(?:finish|finishes|win|wins|lose|loses|beats?|is|are)\\s+(?:first|last|dead|wrong|right|better|overrated|underrated)\\b",
+      "nom_fr": "Le contre-pied",
+      "modele_fr": "{Dicton connu, retourné.}",
+      "exemple_fr": "Le par cœur ne sert à rien en maths.",
+      "ecran_fr": "LE PAR CŒUR NE SERT À RIEN",
+      "match_fr": "^\\s*[\\w' ]{2,34}\\b(?:ne sert à rien|est (?:surcoté|sous-coté|mort|faux|une arnaque)|gagne toujours|perd toujours)\\b"
     },
     {
       "id": 23,
@@ -238,7 +348,12 @@
       "on_screen": "33% NEVER READ AGAIN",
       "best_for": "Sends. A number a person can repeat at dinner gets sent to somebody.",
       "trap": "A statistic you cannot source. Say where it came from in the video or do not use it.",
-      "match": "^\\s*\\d[\\d,.]*\\s?%|\\b\\d[\\d,.]*\\s?%\\s+of\\b"
+      "match": "^\\s*\\d[\\d,.]*\\s?%|\\b\\d[\\d,.]*\\s?%\\s+of\\b",
+      "nom_fr": "La statistique",
+      "modele_fr": "{N} % des {groupe} {fait surprenant}.",
+      "exemple_fr": "68 % des élèves de 3e ne savent pas diviser une fraction.",
+      "ecran_fr": "68 % DES ÉLÈVES",
+      "match_fr": "^\\s*\\d[\\d,.]*\\s?%|\\b\\d[\\d,.]*\\s?%\\s+des?\\b"
     },
     {
       "id": 24,
@@ -248,7 +363,12 @@
       "on_screen": "THE NEW ONE",
       "best_for": "Anything physical or visual. The object is the hook and the words are captions on it.",
       "trap": "Holding the thing up without saying what it changes. A reveal with no stake is an advert.",
-      "match": "^\\s*(?:so,?\\s+)?(?:this|these|here) (?:is|are)\\s+(?:the\\s+)?(?:new|my new)\\b|^\\s*(?:so,?\\s+)?this (?:new|tiny|little)\\b|^\\s*this \\w+ has (?:the|a)\\b"
+      "match": "^\\s*(?:so,?\\s+)?(?:this|these|here) (?:is|are)\\s+(?:the\\s+)?(?:new|my new)\\b|^\\s*(?:so,?\\s+)?this (?:new|tiny|little)\\b|^\\s*this \\w+ has (?:the|a)\\b",
+      "nom_fr": "La révélation",
+      "modele_fr": "Voici le nouveau {chose}.",
+      "exemple_fr": "Voici la nouvelle façon d'apprendre les fractions.",
+      "ecran_fr": "LA NOUVELLE FAÇON",
+      "match_fr": "^\\s*(?:alors,?\\s+)?voici (?:le |la |les )?(?:nouve(?:au|lle|aux|lles)|mon nouveau|ma nouvelle)\\b|^\\s*(?:ce|cette) (?:nouve(?:l|lle)|petite?|minuscule)\\b"
     },
     {
       "id": 25,
@@ -258,7 +378,12 @@
       "on_screen": "1M SUBS IN ONE MONTH",
       "best_for": "Proof when the user does not have their own number yet. Third-person is allowed if it is true.",
       "trap": "No name and no link. An anonymous miracle is a rumour.",
-      "match": "\\bthere (?:was|is) (?:one|a|this)\\b|\\b(?:one|a) (?:guy|girl|creator|student|founder|kid|client|friend) (?:i know |who |that )(?:\\w+ed|grew|made|built|went|took|got|hit)\\b|\\bwe had a new\\b"
+      "match": "\\bthere (?:was|is) (?:one|a|this)\\b|\\b(?:one|a) (?:guy|girl|creator|student|founder|kid|client|friend) (?:i know |who |that )(?:\\w+ed|grew|made|built|went|took|got|hit)\\b|\\bwe had a new\\b",
+      "nom_fr": "Le résultat de quelqu'un d'autre",
+      "modele_fr": "Il y avait un(e) {personne} qui a {résultat} en {durée}.",
+      "exemple_fr": "Une élève de 4e est passée de 7 à 14 en un trimestre.",
+      "ecran_fr": "DE 7 À 14",
+      "match_fr": "\\bil y (?:avait|a) (?:un|une|cet|cette)\\b|\\b(?:un|une) (?:élève|ado|parent|prof|ami|amie|client|cliente) (?:qui |que )?(?:est passée?|a eu|a fait|a gagné|a pris)\\b"
     },
     {
       "id": 26,
@@ -268,7 +393,12 @@
       "on_screen": "THE FASTEST WAY",
       "best_for": "One-claim videos with no story attached. It is the most common shape in the wild and the easiest to write badly.",
       "trap": "A superlative with a soft answer. If the second half is 'consistency', you have said nothing and the comments will tell you.",
-      "match": "^\\s*(?:the\\s+)?(?:fastest|quickest|best|worst|biggest|greatest|easiest|hardest|only|number one|#1|most important)\\s+\\w+|\\bthe (?:fastest|best|worst|biggest|greatest|only) way to\\b"
+      "match": "^\\s*(?:the\\s+)?(?:fastest|quickest|best|worst|biggest|greatest|easiest|hardest|only|number one|#1|most important)\\s+\\w+|\\bthe (?:fastest|best|worst|biggest|greatest|only) way to\\b",
+      "nom_fr": "Le superlatif",
+      "modele_fr": "Le {plus rapide / seul} {chose}, c'est {la réponse}.",
+      "exemple_fr": "La façon la plus rapide de comprendre les fractions, c'est la pizza.",
+      "ecran_fr": "LA PLUS RAPIDE",
+      "match_fr": "^\\s*(?:le|la|les)\\s+(?:plus (?:rapide|simple|facile|grosse?|important)|meilleure?s?|pire|seule?)\\b|\\b(?:la|le) (?:plus rapide|meilleure?|seule?) (?:façon|manière|méthode|technique)\\b"
     }
   ],
   "classify_order": [
@@ -298,5 +428,6 @@
     22,
     11,
     14
-  ]
+  ],
+  "note_fr": "Chaque formule a sa version française : nom_fr, modele_fr, exemple_fr, ecran_fr. match_fr sert à swipe.py pour reconnaître les accroches en français."
 }

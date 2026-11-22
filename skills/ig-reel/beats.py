@@ -26,15 +26,22 @@ import json
 import re
 import sys
 
-WORD_RE = re.compile(r"[A-Za-z0-9$%'’-]+")
+WORD_RE = re.compile(r"[A-Za-zÀ-ÖØ-öø-ÿŒœ0-9$€%'’-]+")
 SENT_RE = re.compile(r"[^.!?]+[.!?]*")
-CONCRETE_RE = re.compile(r"\$\s?\d|\b\d[\d,.]*\b|(?<!^)\b[A-Z][a-z]{2,}\b", re.MULTILINE)
+CONCRETE_RE = re.compile(r"\$\s?\d|\b\d[\d,.]*(?:e|ème|er|re)?\b|(?<!^)\b[A-ZÀ-ÖØ-Þ][a-zß-öø-ÿ]{2,}\b", re.MULTILINE)
 STOPWORDS = {
     "the", "a", "an", "and", "or", "but", "if", "of", "to", "in", "on", "for",
     "with", "that", "this", "it", "is", "are", "was", "were", "be", "been",
     "you", "your", "i", "my", "me", "we", "our", "they", "them", "he", "she",
     "so", "just", "not", "no", "do", "did", "does", "have", "has", "had",
     "will", "can", "at", "as", "by", "from", "out", "up", "off", "one", "all",
+    # French
+    "le", "la", "les", "un", "une", "des", "du", "de", "et", "ou", "mais",
+    "si", "à", "au", "aux", "en", "dans", "sur", "pour", "avec", "que",
+    "qui", "ce", "cet", "cette", "est", "sont", "était", "être", "tu", "te",
+    "ton", "ta", "tes", "vous", "votre", "je", "mon", "ma", "mes", "moi",
+    "nous", "on", "ils", "elles", "il", "elle", "ne", "pas", "c'est",
+    "j'ai", "a", "ai", "as", "fait", "par", "plus", "tout", "ça",
 }
 
 HOOK_WINDOW = 3.0        # seconds. Past this, the thumb has already decided.
@@ -44,6 +51,8 @@ ABSTRACT_RUN = 3         # beats in a row with nothing checkable in them.
 
 def words(text):
     # "$18,000" is one word when it is spoken, so it is one word here too.
+    # Same for the French "18 000" (normal, non-breaking or narrow space).
+    text = re.sub(r"(?<=\d)[ \u00a0\u202f](?=\d{3}\b)", "", text)
     return WORD_RE.findall(re.sub(r"(?<=\d),(?=\d)", "", text))
 
 

@@ -1,103 +1,112 @@
 ---
 name: ig-carousel
 description: >-
-  Build an Instagram carousel - the cover that earns the swipe, slide-by-slide
-  copy, and the 1080x1350 files to upload. Use when the user says "carousel",
-  "slides", "swipe post", "turn this into a carousel", or has a list-shaped or
-  step-shaped idea that would die as a single image.
+  Construire un carrousel Instagram : la couverture qui donne envie de
+  swiper, le texte diapo par diapo, et les fichiers 1080x1350 à publier. À
+  utiliser quand l'utilisateur dit « carrousel », « diapos », « post à
+  swiper », « transforme ça en carrousel », ou a une idée en liste ou en
+  étapes qui mourrait en image seule.
 ---
 
 # ig-carousel
 
-Carousels are the highest-dwell format on the grid, because a swipe is an
-interaction and a scroll is not. They also get a second chance: Instagram can
-show a carousel again starting from a later slide to someone who did not engage
-the first time, so slide two has to stand on its own as well.
+Les carrousels sont le format où l'on reste le plus longtemps sur la grille,
+parce qu'un swipe est une interaction et qu'un défilement n'en est pas une. Ils
+ont aussi une seconde chance : Instagram peut remontrer un carrousel en
+commençant par une diapo plus loin à quelqu'un qui n'a pas réagi la première
+fois, donc la diapo deux doit aussi tenir debout toute seule.
 
-The format rewards one idea broken into steps. It punishes a caption cut into
-pieces.
+Le format récompense une idée découpée en étapes. Il punit une légende coupée
+en morceaux.
 
-## When to use it instead of a Reel
+## Quand l'utiliser plutôt qu'un Reel
 
-Use a carousel when the idea has **sequence and needs to be re-read**: steps, a
-framework with parts, a before and after, a list worth screenshotting. Use a
-Reel when the idea has motion, a face, or a payoff that has to be seen
-happening.
+Utilise un carrousel quand l'idée a **une suite et doit être relue** : des
+étapes, une méthode en plusieurs parties, un avant/après, une liste qui mérite
+une capture d'écran. Utilise un Reel quand l'idée a du mouvement, un visage, ou
+une chute qu'il faut voir se produire.
 
-If the idea is one claim, it is neither. Hand it to `/ig-reel` and say so.
+Si l'idée tient en une affirmation, ce n'est ni l'un ni l'autre. Passe-la à
+`/ig-reel` et dis-le.
 
 ## Structure
 
-6 to 10 slides. The cap is 20 and 20 is almost always a book nobody finishes.
-Under 5 and the swipe never starts.
+6 à 10 diapos. Le maximum est 20, et 20, c'est presque toujours un livre que
+personne ne finit. Sous 5, le swipe ne démarre jamais.
 
 ```
-1         COVER     the hook. 6 words or fewer, at a size that is legible in
-                    the grid at thumbnail. One line of promise under it.
-2         THE STAKE why this matters, in one sentence. This slide is also a
-                    second cover, so it cannot be setup.
-3 to N    ONE IDEA PER SLIDE. A headline of 3 to 7 words, at most 25 words
-                    under it. If a slide needs a paragraph, it is two slides.
-N+1       RECAP     the whole thing as a list. This is the screenshot slide.
-LAST      CTA       one action. Save, comment a keyword, or follow. One.
+1         COUVERTURE  l'accroche. 6 mots maximum, lisible dans la grille en
+                      miniature. Une ligne de promesse en dessous.
+2         L'ENJEU     pourquoi ça compte, en une phrase. Cette diapo est aussi
+                      une seconde couverture, elle ne peut pas être une mise en
+                      place.
+3 à N     UNE IDÉE PAR DIAPO. Un titre de 3 à 7 mots, au plus 25 mots en
+                      dessous. Si une diapo demande un paragraphe, c'est deux
+                      diapos.
+N+1       RÉCAP       le tout sous forme de liste. C'est la diapo qu'on capture.
+DERNIÈRE  APPEL       une action. Enregistrer, commenter un mot-clé, ou
+                      s'abonner. Une.
 ```
 
-## Slide copy rules
+## Règles du texte
 
-- **The cover is 80% of the result.** Six words. Big. Nothing on the deck saves
-  a cover nobody swipes.
-- **Design for the grid crop.** The profile grid crops to a portrait rectangle
-  that is taller than it is wide, and the exact ratio has moved more than once.
-  Build at 1080x1350 and keep the cover text well inside the middle, clear of
-  the outer 120 pixels on every side, and the crop stops mattering.
-- **Number the slides** (3/8). Completion goes up when people can see the end.
-- **No slide is a paragraph.** If it cannot be said in 25 words, split it.
-- **The recap slide is the one people screenshot and send.** Sends are the
-  strongest signal you can earn. Make it standalone and readable with no
-  context.
-- **The handle on every slide**, small, bottom corner. Screenshots travel
-  without you.
-- **Alt text on the cover at minimum.** It is read by screen readers and by
-  Instagram.
+- **La couverture fait 80 % du résultat.** Six mots. En grand. Rien dans le
+  carrousel ne sauve une couverture que personne ne swipe.
+- **Pense au recadrage de la grille.** La grille du profil recadre en rectangle
+  portrait plus haut que large, et le ratio exact a déjà changé plusieurs fois.
+  Construis en 1080x1350 et garde le texte de couverture bien au centre, loin
+  des 120 pixels extérieurs de chaque côté, et le recadrage n'a plus
+  d'importance.
+- **Numérote les diapos** (3/8). On va plus souvent au bout quand on voit la
+  fin.
+- **Aucune diapo n'est un paragraphe.** Si ça ne se dit pas en 25 mots, coupe.
+- **La diapo récap est celle qu'on capture et qu'on envoie.** Les envois sont le
+  signal le plus fort qu'on puisse obtenir. Rends-la autonome et lisible sans
+  contexte.
+- **Le pseudo sur chaque diapo**, petit, dans un coin en bas. Les captures
+  voyagent sans toi.
+- **Texte alternatif au moins sur la couverture.** Il est lu par les lecteurs
+  d'écran et par Instagram.
 
-## Building the files
+## Fabriquer les fichiers
 
-Instagram wants 1080x1350 (4:5), JPEG or PNG, up to 20 items. Build it as HTML
-and print each slide:
+Instagram veut du 1080x1350 (4:5), JPEG ou PNG, jusqu'à 20 éléments.
+Construis-le en HTML et imprime chaque diapo :
 
 ```bash
-# one <section> per slide, 1080x1350, page-break-after: always
-# then Chrome headless --print-to-pdf, or any HTML-to-image you already use
+# une <section> par diapo, 1080x1350, page-break-after: always
+# puis Chrome headless --print-to-pdf, ou n'importe quel outil HTML vers image
 ```
 
-Write the HTML with `width:1080px; height:1350px`, a single accent colour, and
-type no smaller than 32px, because this is read on a phone at a third of its
-real size. If the project has a brand skill or a design system, use it and do
-not invent a palette.
+Écris le HTML avec `width:1080px; height:1350px`, une seule couleur d'accent,
+et un texte jamais plus petit que 32px, parce qu'il est lu sur un téléphone au
+tiers de sa taille réelle. Si le projet a une charte ou un design system,
+utilise-le et n'invente pas de palette.
 
-## Output
+## Sortie
 
-The slide-by-slide copy first, as a numbered list the user can read in ten
-seconds and edit before anything is rendered. Then the **caption**, which for a
-carousel is Job B in `/ig-caption`: the caption is doing work here, because the
-cover has already used its six words.
+D'abord le texte diapo par diapo, en liste numérotée que l'utilisateur peut lire
+en dix secondes et corriger avant tout rendu. Puis la **légende**, qui pour un
+carrousel est le Travail B de `/ig-caption` : la légende travaille ici, parce
+que la couverture a déjà utilisé ses six mots.
 
-Run both through `/ig-human`. Build the files only after the user approves the
-copy.
+Passe les deux dans `/ig-human`. Ne fabrique les fichiers qu'après validation
+du texte par l'utilisateur.
 
 ```
-CAROUSEL  ·  8 slides
+CARROUSEL  ·  8 diapos
 
-1  COVER   THE $18,000 CLAUSE
-           One line I now put in every contract.
-2  STAKE   I approved the work. They asked for the money back nine days later.
-3          WHAT IT SAYS
-           Payment on delivery, not on approval.
+1  COUVERTURE  LA CLAUSE À 18 000 €
+               Une ligne que je mets maintenant dans chaque contrat.
+2  ENJEU       J'ai validé le travail. Neuf jours après, ils voulaient être
+               remboursés.
+3              CE QU'ELLE DIT
+               Paiement à la livraison, pas à la validation.
 ...
-7  RECAP   All four lines, in order.
-8  CTA     Comment CONTRACT and I will send the full clause.
+7  RÉCAP       Les quatre lignes, dans l'ordre.
+8  APPEL       Commente CONTRAT et je t'envoie la clause complète.
 
-Caption: Job B, hook in line 1, one ask, 3 tags.
+Légende : Travail B, accroche en ligne 1, une demande, 3 hashtags.
 ```
 
-Nothing is uploaded. The user posts it.
+Rien n'est mis en ligne. L'utilisateur publie.
